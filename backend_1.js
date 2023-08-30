@@ -18,7 +18,7 @@ class ProductManager {
         
         const resultProduct = this.product.find(product => product.code === code);
         if (resultProduct) {
-            return 'El código del producto ya está en uso.';
+            return console.log('El código del producto ya está en uso.');
         }
 
 
@@ -45,11 +45,11 @@ class ProductManager {
 const product = new ProductManager();
 
 //Pruebas 
-/* product.addProduct('Gato', 'Marrón', 400, '', '1');
+product.addProduct('Gato', 'Marrón', 400, '', '1');
 product.addProduct('Gato', 'Naranja', 400, '', '2');
 console.log(product.getProduct())
 const productoEncontrado = product.getProductByID(3);
 console.log(productoEncontrado);
-product.addProduct('Gato', 'Naranja', 400, '', '2'); */
+product.addProduct('Gato', 'Naranja', 400, '', '2');
 
 
