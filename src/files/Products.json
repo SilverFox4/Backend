@@ -1,0 +1,74 @@
+[
+  {
+    "title": "frutilla",
+    "description": "esta es una descripción",
+    "price": 1500,
+    "img": "img",
+    "code": 2,
+    "stock": 100,
+    "id": 1
+  },
+  {
+    "title": "plátano",
+    "description": "esta es una descripción",
+    "price": 1500,
+    "img": "img",
+    "code": 3,
+    "stock": 150,
+    "id": 2
+  },
+  {
+    "title": "chirimoya",
+    "description": "esta es una descripción",
+    "price": 1500,
+    "img": "img",
+    "code": 4,
+    "stock": 150,
+    "id": 3
+  },
+  {
+    "title": "tomate",
+    "description": "esta es una descripción",
+    "price": 1500,
+    "img": "img",
+    "code": 5,
+    "stock": 150,
+    "id": 4
+  },
+  {
+    "title": "pera",
+    "description": "esta es una descripción",
+    "price": 1500,
+    "img": "img",
+    "code": 6,
+    "stock": 150,
+    "id": 5
+  },
+  {
+    "title": "manzana",
+    "description": "esta es una descripción",
+    "price": 1500,
+    "img": "img",
+    "code": 7,
+    "stock": 150,
+    "id": 6
+  },
+  {
+    "title": "piña",
+    "description": "esta es una descripción",
+    "price": 1500,
+    "img": "img",
+    "code": 8,
+    "stock": 150,
+    "id": 7
+  },
+  {
+    "title": "naranja",
+    "description": "esta es una descripción",
+    "price": 1500,
+    "img": "img",
+    "code": 9,
+    "stock": 150,
+    "id": 8
+  }
+]
