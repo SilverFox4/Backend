@@ -1,0 +1,11 @@
+[
+  {
+    "title": "plátano",
+    "description": "esta es una descripción",
+    "price": 1500,
+    "img": "img",
+    "code": 3,
+    "stock": 150,
+    "id": 2
+  }
+]
