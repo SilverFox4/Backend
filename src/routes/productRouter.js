@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
         const products = await productManager.getProduct()
         res.json(products)
     } catch (error) {
-       res.status(400).send('Error en el servidor')
+       res.status(400).send('server error')
     }
 })
 
@@ -29,14 +29,35 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const newProduct = req.body; // Obtén el nuevo producto de la solicitud
+        const newProduct = req.body; 
         const addedProduct = await productManager.add(newProduct);
-        res.status(201).json(addedProduct); // Responde con el producto agregado
+        res.status(201).json(addedProduct);
     } catch (error) {
-        res.status(500).send('Error en el servidor');
+        res.status(400).send('server error');
     }
 });
 
+router.post('/:pid', async (req, res) => {
+    try {
+        const { pid } = req.params
+        const updateProduct = req.body; 
+        const updateProd = await productManager.updateProduct(pid, updateProduct);
+        res.status(201).json(updateProd);
+    } catch (error) {
+        res.status(400).send('server error');
+    }
+});
+
+router.delete(':pid', async (req, res) => {
+    try {
+    const { pid } = req.params
+    const products = await productManager.deleteProduct(pid)
+    res.status(201).json(products);
+    } catch (error) {
+        res.status(400).send('server error');
+    }
+
+})
 
 
 module.exports = router;

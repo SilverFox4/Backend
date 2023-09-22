@@ -49,35 +49,34 @@ class ProductManagerFile {
         return 'Producto agregado'
     }
 
-    updateProduct = async (pid, fieldToUpdate, newValue) => {
+    updateProduct = async (pid, updatedFields) => {
         try {
             const products = await this.readFileProducts();
-
             const productIndex = products.findIndex(product => product.id === pid);
-
-            if (!pid || !fieldToUpdate || newValue === undefined) {
-                return ('Parámetros inválidos para la actualización');
-            }
-
+    
             if (productIndex === -1) {
-                return ('No existe ese producto');
+                return { error: 'No existe ese producto' };
             }
-
+    
             const productToUpdate = products[productIndex];
-
-            if (!(fieldToUpdate in productToUpdate)) {
-                return (`El campo '${fieldToUpdate}' no existe en el producto`);
+    
+            for (const field in updatedFields) {
+                if (field !== 'id') { 
+                    if (field in productToUpdate) {
+                        productToUpdate[field] = updatedFields[field];
+                    } else {
+                        return { error: `El campo '${field}' no existe en el producto` };
+                    }
+                }
             }
-
-            productToUpdate[fieldToUpdate] = newValue;
-
+    
             await fs.writeFile(this.path, JSON.stringify(products, null, 2), 'utf-8');
-
-            return 'Producto actualizado exitosamente';
+    
+            return { success: 'Producto actualizado exitosamente', updatedProduct: productToUpdate };
         } catch (error) {
             throw error;
         }
-    }
+    }    
 
     deleteProduct = async (pid) => {
         try {
@@ -129,6 +128,6 @@ module.exports = ProductManagerFile;
 // .then(res => console.log(res))
 // .catch(err => console.log(err))
 
-//productFile.updateProduct(1, "stock", 100)
+//productFile.updateProduct(1, prod)
 //.then(res => console.log(res))
 //.catch(err => console.log(err))

@@ -1,11 +1,11 @@
 [
   {
-    "title": "frutilla",
+    "title": "prod 4",
     "description": "esta es una descripción",
     "price": 1500,
     "img": "img",
-    "code": 2,
-    "stock": 100,
+    "code": 9,
+    "stock": 150,
     "id": 1
   },
   {
@@ -61,14 +61,5 @@
     "code": 8,
     "stock": 150,
     "id": 7
-  },
-  {
-    "title": "naranja",
-    "description": "esta es una descripción",
-    "price": 1500,
-    "img": "img",
-    "code": 9,
-    "stock": 150,
-    "id": 8
   }
 ]
