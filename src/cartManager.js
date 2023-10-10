@@ -50,7 +50,7 @@ class CartManagerFile {
         return newCart;
     }
     
-    addCart = async ({ cid, pid }) => {
+    addCart = async ( cid, pid ) => {
         try {
             const carts = await this.readFileCarts();
             const cart = carts.find((cart) => cart.cid == cid);
@@ -60,7 +60,7 @@ class CartManagerFile {
             }
     
             const products = await productManager.readFileProducts();
-            const productIndex = products.findIndex(product => product.id === pid);
+            const productIndex = productManager.getProductByID(product => product.id === pid);
     
             if (productIndex === -1) {
                 return { error: 'No existe ese producto' };
